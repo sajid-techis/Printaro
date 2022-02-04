@@ -9,9 +9,15 @@
 .main-image {
   position: relative;
 }
-.main-image img {
+.main-image .main-img-xl img {
   width: 100%;
 }
+.main-image-sm {
+  display: none;
+}
+/*************************
+****Header
+*************************/
 header {
   position: absolute;
   top: 0;
@@ -57,11 +63,37 @@ header .right-nav-mb {
     width: 20%;
     padding: 0px 20px;
   }
+  header .logo img {
+    width: 20%;
+  }
   header .right-nav-mb {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 80%;
+    width: 40%;
+  }
+  header .right-nav-mb img {
+    width: 10%;
+  }
+  .main-image .main-img-xl {
+    display: none;
+  }
+  .main-image-sm {
+    display: block;
+  }
+  .main-image-sm img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 950px) {
+  header .logo {
+    padding: 0px 20px;
+  }
+  header .right-nav {
+    padding: 0px 75px;
+  }
+  header .menu {
+    width: 50%;
   }
 }
 /****************************
@@ -82,7 +114,7 @@ header .right-nav-mb {
 }
 .arrow {
   position: absolute;
-  top: 50%;
+  top: 55%;
   right: 38%;
 }
 .front-back-arrows {
@@ -90,17 +122,65 @@ header .right-nav-mb {
   justify-content: flex-start;
   position: absolute;
   right: 10%;
-  bottom: 15%;
+  bottom: 10%;
+}
+.text-sm {
+  display: none;
+}
+/****************************
+******Media Screen
+*****************************/
+@media screen and (max-width: 500px) {
+  .text-sm {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    color: #fff;
+    font-size: 20px;
+  }
+  .text {
+    top: 55%;
+    left: 20%;
+  }
+  .text p {
+    display: none;
+  }
+  .arrow {
+    display: none;
+  }
+  .front-back-arrows {
+    bottom: 10%;
+    right: 5%;
+    justify-content: flex-end;
+  }
+  .front-back-arrows img {
+    width: 20%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 950px) {
+  .text {
+    top: 23%;
+  }
+  .text p {
+    font-size: 20px;
+  }
+  .text .shop-now {
+    margin-top: 10px;
+  }
+  .front-back-arrows {
+    right: 5%;
+  }
+  .front-back-arrows img {
+    width: 40%;
+  }
 }
 /****************************
 ******White-Background
 *****************************/
-/****************************
-******White-Background
-*****************************/
-.white-background {
+.main-image .white-background {
   position: absolute;
-  bottom: 8%;
+  bottom: 0%;
   width: 70%;
   height: 150px;
   background-color: #fff;
@@ -151,7 +231,49 @@ header .right-nav-mb {
 /****************************
 ******Media Screen
 *****************************/
-
+@media screen and (max-width: 500px) {
+  .main-image .white-background {
+    bottom: 0%;
+    height: 80px;
+    display: block;
+    border-radius: 0px 30px 0px 0px;
+  }
+  .white-background .free-shipping {
+    display: none;
+  }
+  .white-background .customer-satisfaction {
+    display: none;
+  }
+  .white-background .originality {
+    width: 70%;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  .white-background .originality .originality-text span {
+    font-size: 10px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 950px) {
+  .main-image .white-background {
+    height: 115px;
+    border-radius: 0px 50px 0px 0px;
+  }
+  .white-background .free-shipping {
+    flex-basis: 28%;
+  }
+  .white-background .customer-satisfaction {
+    flex-basis: 30%;
+  }
+  .white-background .originality {
+    flex-basis: 30%;
+  }
+  .white-background span {
+    font-size: 10px;
+  }
+  .white-background p {
+    font-size: 8px;
+  }
+}
 /****************************
 ******Offers
 *****************************/
@@ -203,6 +325,45 @@ header .right-nav-mb {
   margin-top: 20px;
   font-weight: bolder;
   font-size: 10px;
+}
+/****************************
+******Media Screen
+*****************************/
+@media screen and (max-width: 500px) {
+  .offers {
+    margin: 0px 20px;
+  }
+  .offers .dark-orange {
+    width: 100%;
+    padding: 0px 20px;
+    justify-content: space-between;
+  }
+  .offers .dark-orange img {
+    width: 60%;
+  }
+  .offers .dark-orange .offer-text p {
+    font-size: 15px;
+  }
+  .offers .dark-orange .offer-text button {
+    padding: 10px 25px;
+  }
+  .offers .dark-blue {
+    display: none;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 950px) {
+  .offers .dark-orange {
+    width: 50%;
+  }
+  .offers .dark-orange img {
+    width: 250px;
+  }
+  .offers .dark-blue {
+    width: 50%;
+  }
+  .offers .dark-blue img {
+    width: 250px;
+  }
 }
 /****************************
 ******Just For You
@@ -277,6 +438,43 @@ header .right-nav-mb {
   display: none;
 }
 /****************************
+******Media Screen
+*****************************/
+@media screen and (max-width: 500px) {
+  .just-for-you {
+    margin: 0;
+  }
+  .just-for-you .heading {
+    justify-content: space-around;
+    padding: 10px 0px;
+  }
+  .just-for-you .item-container {
+    padding: 50px 10px;
+  }
+  .just-for-you .item-container img {
+    width: 15px;
+  }
+  .just-for-you .item-container .item-flex .item .background {
+    width: 170px;
+    height: 250px;
+  }
+  .just-for-you .item-container .item-flex .item .background .item-image img {
+    width: 140px;
+    height: 170px;
+  }
+  .just-for-you .item-container .item-flex .item .item-details p {
+    font-size: 10px;
+  }
+  .just-for-you .item-container .item-flex .item .background .discount {
+    padding: 10px 10px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 950px) {
+  .just-for-you .heading {
+    padding: 10px 40px;
+  }
+}
+/****************************
 ******Choose Us
 *****************************/
 .choose-us {
@@ -306,8 +504,32 @@ header .right-nav-mb {
 /****************************
 ******Designs
 *****************************/
+@media screen and (max-width: 500px) {
+  .choose-us {
+    margin: 50px 20px;
+  }
+  .choose-us .container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 80px 0px;
+    grid-gap: 30px;
+  }
+  .choose-us .container .choose-us-text p {
+    font-size: 7px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 950px) {
+  .choose-us {
+    margin: 50px 0px;
+  }
+  .choose-us .container {
+    padding: 80px 0px;
+  }
+}
+/****************************
+******Designs
+*****************************/
 .designs {
-  margin: 50px 50px;
+  margin: 50px 30px;
 }
 .designs .heading {
   text-align: center;
@@ -327,7 +549,7 @@ header .right-nav-mb {
   overflow: scroll;
 }
 .designs .design-container .design-flex .design-background {
-  width: 250px;
+  width: 300px;
   height: 400px;
   position: relative;
   background-color: #ebebeb;
@@ -344,6 +566,29 @@ header .right-nav-mb {
 }
 .designs .design-container .design-flex .design .design-details span {
   font-weight: 400;
+}
+/****************************
+******Media Screen
+*****************************/
+@media screen and (max-width: 500px) {
+  .designs {
+    margin: 50px 0px;
+  }
+  .designs .design-container {
+    padding: 50px 10px;
+  }
+  .designs .design-container img {
+    width: 15px;
+  }
+  .designs .design-container .design-flex .design-background {
+    width: 170px;
+    height: 250px;
+  }
+  .designs .design-container .design-flex .design-background .design-image img {
+    width: 140px;
+    height: 170px;
+    left: 8%;
+  }
 }
 /****************************
 ******Newsletter
@@ -380,6 +625,38 @@ header .right-nav-mb {
   border: 0;
 }
 /****************************
+******Media Screen
+*****************************/
+@media screen and (max-width: 500px) {
+  .newsletter {
+    margin: 50px 0px;
+    display: block;
+    width: 100%;
+    height: 220px;
+  }
+  .newsletter .email {
+    display: block;
+    padding: 0px 30px;
+  }
+  .newsletter .email input {
+    width: 70%;
+  }
+  .newsletter .subscription {
+    text-align: center;
+    font-size: 12px;
+    padding: 20px 0px;
+  }
+  .newsletter .email button {
+    margin: 15px 0px 0px 30%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 950px) {
+  .newsletter {
+    margin: 50px 0px;
+    width: 100%;
+  }
+}
+/****************************
 ******Bottom
 *****************************/
 .bottom {
@@ -412,6 +689,25 @@ header .right-nav-mb {
   width: 10px;
 }
 /****************************
+******Media Screen
+*****************************/
+@media screen and (max-width: 500px) {
+  .bottom {
+    margin: 50px 0px;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    padding: 0px 30px;
+  }
+  .bottom .printaro .social-links img {
+    padding: 0px 10px;
+    width: 20px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 950px) {
+  .bottom {
+    margin: 50px 20px;
+  }
+}
+/****************************
 ******Footer
 *****************************/
 footer {
@@ -421,4 +717,10 @@ footer {
 }
 footer p {
   padding: 20px 0px;
+}
+/****************************
+******Media Screen
+*****************************/
+footer p {
+  font-size: 10px;
 }
